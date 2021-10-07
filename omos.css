@@ -1,4 +1,7 @@
+/*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
 img {
   max-width: 100%;
@@ -6,6 +9,14 @@ img {
 
 h1 {
   font-family: "Josefin Slab", serif;
+}
+
+h2 {
+  font-family: "Yeseva One", cursive;
+}
+
+p {
+  font-family: "Roboto Slab", serif;
 }
 
 /* // Extra small devices (portrait phones, less than 576px)
@@ -41,6 +52,7 @@ footer {
 }
 .bgimage p {
   color: white;
+  font-size: 1.3em;
 }
 .bgimage h1 {
   color: white;
@@ -52,9 +64,21 @@ footer {
 /* første sektiom */
 
 #historien p {
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 2em;
-  font-family: "Josefin Slab", serif;
+  font-family: "Roboto Slab", serif;
+}
+#historien h6 {
+  font-size: 1.1em;
+  line-height: 2em;
+  font-family: "Yeseva One", cursive;
+  text-align: center;
+}
+
+#historien2 p {
+  font-size: 1.1em;
+  line-height: 2em;
+  font-family: "Roboto Slab", serif;
 }
 /* splash til om os side end*/
 
@@ -62,10 +86,7 @@ footer {
 /* Small devices (landscape phones, 576px and up) */
 /**************************************************/
 @media (min-width: 576px) {
-  body {
-  }
-
-  body::before {
+  body body::before {
     content: "'sm-': lig el. over 576px.";
   }
 
@@ -76,10 +97,7 @@ footer {
 /* // Medium devices (tablets, 768px and up) */
 /**************************************************/
 @media (min-width: 768px) {
-  body {
-  }
-
-  body::before {
+  body body::before {
     content: "'md': lig el. over 768px. ";
   }
 
@@ -90,10 +108,7 @@ footer {
 /* // Large devices (desktops, 992px and up) */
 /**************************************************/
 @media (min-width: 992px) {
-  body {
-  }
-
-  body::before {
+  body body::before {
     content: "'lg': lig el. over 992px.";
   }
 
@@ -104,10 +119,7 @@ footer {
 /* // Extra large devices (large desktops, 1200px and up) */
 /**************************************************/
 @media (min-width: 1200px) {
-  body {
-  }
-
-  body::before {
+  body body::before {
     content: "'xl': lig el. over 1200px.";
   }
 
@@ -118,10 +130,7 @@ footer {
 /* // Extra Extra large (XXL) devices (XXL screens, 1400px and up) */
 /**************************************************/
 @media (min-width: 1400px) {
-  body {
-  }
-
-  body::before {
+  body body::before {
     content: "'xxl': lig el. over 1400px.";
   }
 
