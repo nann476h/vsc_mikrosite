@@ -45,7 +45,7 @@ body::before {
 }
 
 footer {
-  background-color: beige;
+  background-color: #f0ece9;
 }
 
 .bgimage {
@@ -67,6 +67,28 @@ footer {
   /* text-shadow: 2px 2px #333; */
   align-content: center;
   font-size: 10em;
+}
+
+.btn {
+  outline: none;
+  border: 1;
+  font-size: 16px;
+  line-height: 1;
+  padding: 16px 30px;
+  border-radius: 30px;
+  background: lightgrey;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  font-family: "Roboto Slab", serif;
+}
+
+.btn:hover,
+.btn:focus {
+  background: darkgrey;
+}
+.btn:active {
+  background: darkslategray;
 }
 
 /* splash til om os side end*/
