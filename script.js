@@ -11,7 +11,7 @@ sections.forEach((section) => {
       scrollTrigger: {
         trigger: section,
         start: "top 50%",
-        end: "+=200",
+        end: "+=400",
         scrub: true,
         markers: true,
       },
@@ -22,7 +22,7 @@ sections.forEach((section) => {
     })
     .from(p, {
       y: 100,
-      duration: 1,
+      duration: 4,
       opacity: 0,
       stagger: 1,
     });
@@ -45,3 +45,32 @@ colorSections.forEach((section, i) => {
 });
 
 // Background color change end.
+
+// slider
+var index = 0;
+var slides = document.querySelectorAll(".slides");
+var dot = document.querySelectorAll(".dot");
+
+function changeSlide() {
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+
+  if (index > slides.length - 1) {
+    index = 0;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dot[i].classList.remove("active");
+  }
+
+  slides[index].style.display = "block";
+  dot[index].classList.add("active");
+
+  index++;
+
+  setTimeout(changeSlide, 2000);
+}
+
+changeSlide();

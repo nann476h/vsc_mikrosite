@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
+/* tidl. kaldet 'xs-' */
 img {
   max-width: 100%;
 }
@@ -14,6 +15,8 @@ h1 {
 
 h2 {
   font-family: "Yeseva One", cursive;
+  line-height: 2em;
+  font-size: 1.7em;
 }
 
 p {
@@ -24,16 +27,11 @@ p {
 
 h4 {
   font-family: "Roboto Slab", serif;
+  line-height: 2em;
+  font-size: 1.4em;
 }
 
-/* // Extra small devices (portrait phones, less than 576px)
-    // No media query for `xs` since this is the default in Bootstrap*/
-
-/**************************************************/
-/* Hjælpefil til at identificere breakpoints. Du kan bruge de samme breakpoints i din egen style.css-fil */
-
-/* tidl. kaldet 'xs-' */
-body::before {
+/* body::before {
   content: "Default. mobile/under 576px. Deafult i Bootstrap.";
   padding: 1rem;
   background-color: turquoise;
@@ -42,32 +40,12 @@ body::before {
   left: 0;
   z-index: 1000;
   opacity: 0.5;
-}
+} */
 
 footer {
   background-color: #f0ece9;
 }
-
-/* .bgimage {
-  width: 100%;
-  height: 500px;
-  background: url("https://images.unsplash.com/photo-1625153813050-f53d1886b895?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-.bgimage p {
-  color: white;
-  font-size: 1.3em;
-}
-.bgimage h1 {
-  color: white;
-  /* text-shadow: 2px 2px #333; */
-/* align-content: center;
-  font-size: 10em;
-} */
+/* hero image */
 */ * {
   margin: 0;
   padding: 0;
@@ -87,8 +65,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  height: 40vh;
 }
 
 #hero-text h1 {
@@ -105,7 +82,7 @@ footer {
   position: absolute;
   top: 0;
 }
-
+/* button */
 .btn {
   outline: none;
   border: 1;
@@ -126,6 +103,67 @@ footer {
 }
 .btn:active {
   background: darkslategray;
+}
+
+/* image slider */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#slider {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+}
+
+.slides {
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 1s;
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+#dot {
+  margin: 0 auto;
+  text-align: center;
+}
+.dot {
+  display: inline-block;
+  border-radius: 50%;
+  background: #d3d3d3;
+  padding: 8px;
+  margin: 10px 5px;
+}
+
+/* .active {
+  background: black;
+} */
+
+@media (max-width: 567px) {
+  #slider {
+    width: 100%;
+  }
+}
+
+#heading {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  margin: 10px 0px;
 }
 
 /* splash til om os side end*/
@@ -164,6 +202,10 @@ footer {
     content: "'lg': lig el. over 992px.";
   }
 
+  #hero-text {
+    width: 150vw;
+    height: 70vh;
+  }
   /* END "lg-" 992px and up */
 }
 
@@ -188,23 +230,3 @@ footer {
 
   /* END "xl-" 1400px and up */
 }
-
-/* background color change  */
-
-/* section {
-  height: 100vh;
-}
-
-header,
-section {
-  display: grid;
-  place-content: center;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100%;
-} */
