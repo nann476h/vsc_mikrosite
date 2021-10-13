@@ -11,7 +11,7 @@ sections.forEach((section) => {
       scrollTrigger: {
         trigger: section,
         start: "top 50%",
-        end: "+=400",
+        end: "+=200",
         scrub: true,
         markers: true,
       },
@@ -22,7 +22,7 @@ sections.forEach((section) => {
     })
     .from(p, {
       y: 100,
-      duration: 4,
+      duration: 1,
       opacity: 0,
       stagger: 1,
     });
