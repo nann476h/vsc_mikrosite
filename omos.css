@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
+/* tidl. kaldet 'xs-' */
+
+footer {
+  background-color: #f0ece9;
+}
+
 img {
   max-width: 100%;
 }
@@ -13,67 +19,27 @@ h1 {
 
 h2 {
   font-family: "Yeseva One", cursive;
-  line-height: 70px !important;
+  line-height: 2em;
+  font-size: 1.7em;
+  /* line-height: 70px !important; */
 }
 
 p {
+  font-size: 1.1em;
+  line-height: 2em;
   font-family: "Roboto Slab", serif;
 }
 
-/* // Extra small devices (portrait phones, less than 576px)
-    // No media query for `xs` since this is the default in Bootstrap*/
-
-/**************************************************/
-/* Hjælpefil til at identificere breakpoints. Du kan bruge de samme breakpoints i din egen style.css-fil */
-
-/* tidl. kaldet 'xs-' */
-body::before {
-  content: "Default. mobile/under 576px. Deafult i Bootstrap.";
-  padding: 1rem;
-  background-color: turquoise;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  opacity: 0.5;
+h4 {
+  font-family: "Roboto Slab", serif;
+  line-height: 2em;
+  font-size: 1.5em;
 }
-
-footer {
-  background-color: beige;
-}
-
-/* .bgimage {
-  width: 100%;
-  height: 500px;
-  background: url(https://images.unsplash.com/photo-1627384113858-ce93ff568d1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2340&q=80);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: ur
-}
-.bgimage p {
-  color: white;
-  font-size: 1.3em;
-}
-.bgimage h1 {
-  color: white;
-  text-shadow: 2px 2px #333;
-  align-content: center;
-  font-size: 20em;
-} */
-
 * {
   margin: 0;
   padding: 0;
 }
-
+/* Hero image */
 #container {
   width: 100vw;
   height: 100vh;
@@ -89,25 +55,24 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 #hero-text h1 {
   text-transform: capitalize;
   font-size: calc(4rem + 1vw);
   color: hsl(216, 33%, 97%);
+  text-align: center;
 }
 
 #overlay {
   background: #000;
   width: 100%;
   height: 100%;
-  opacity: 0.4;
+  opacity: 0.6;
   position: absolute;
   top: 0;
 }
-
-/* første sektiom */
 
 #historien p {
   font-size: 1.1em;
@@ -126,8 +91,146 @@ footer {
   line-height: 2em;
   font-family: "Roboto Slab", serif;
 }
-/* splash til om os side end*/
+/* image  */
+.image-gallery {
+  margin: auto;
+  width: 800px;
+  position: relative;
+}
+.image-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+.thumbnails {
+  width: 100%;
+  display: flex;
+}
+.thumbnails label {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  background-size: cover;
+  margin: 0;
+  flex: 1 1 150px;
+  cursor: pointer;
+}
 
+.image-1,
+.image-2,
+.image-3,
+.image-4 {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: all 1.2s ease-out;
+}
+.image-1,
+.thumbnails label[for="image1"] {
+  background-image: url(images/b9.jpeg);
+}
+.image-2,
+.thumbnails label[for="image2"] {
+  background-image: url(images/b10.jpeg);
+}
+.image-3,
+.thumbnails label[for="image3"] {
+  background-image: url(images/b11.jpeg);
+}
+.image-4,
+.thumbnails label[for="image4"] {
+  background-image: url(images/b12.jpeg);
+}
+#image1:checked + .image-1,
+#image2:checked + .image-2,
+#image3:checked + .image-3,
+#image4:checked + .image-4 {
+  opacity: 1;
+}
+.image-gallery input[type="radio"] {
+  position: absolute;
+  top: 370px;
+  z-index: 100;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  background-color: #00000033;
+  height: 16px;
+  width: 16px;
+  border: 3px solid #f1f1f1;
+  border-radius: 16px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 1px 4px #00000088;
+}
+.image-gallery input[type="radio"]:hover {
+  background-color: #f7f7f780;
+}
+.image-gallery input[type="radio"]:checked {
+  background-color: #f1f1f1;
+}
+.image-gallery input[type="radio"]:nth-of-type(1) {
+  left: 50%;
+  margin-left: -36px;
+}
+.image-gallery input[type="radio"]:nth-of-type(2) {
+  left: 50%;
+  margin-left: -12px;
+}
+.image-gallery input[type="radio"]:nth-of-type(3) {
+  left: 50%;
+  margin-left: 12px;
+}
+.image-gallery input[type="radio"]:nth-of-type(4) {
+  left: 50%;
+  margin-left: 36px;
+}
+
+.image-gallery label.prev,
+.image-gallery label.next {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  color: #f1f1f1;
+  text-shadow: 0px 1px 4px #00000088;
+  font-family: "Georgia", "Apple Symbols", serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+.image-gallery:hover label.prev,
+.image-gallery:hover label.next {
+  opacity: 1;
+}
+.image-gallery label.prev:before {
+  content: "\003c";
+}
+.image-gallery label.next:before {
+  content: "\003e";
+}
+.image-gallery label.prev {
+  left: 10px;
+}
+.image-gallery label.next {
+  right: 10px;
+}
+.image-gallery label.prev:hover,
+.image-gallery label.next:hover {
+  margin-top: -22px;
+  text-shadow: 0px 3px 4px #00000088;
+}
 /**************************************************/
 /* Small devices (landscape phones, 576px and up) */
 /**************************************************/
@@ -152,6 +255,10 @@ footer {
     place-content: center;
   }
 
+  #overlay {
+    opacity: 0.4;
+  }
+
   /* END "md-" 768px and up */
 }
 
@@ -161,6 +268,15 @@ footer {
 @media (min-width: 992px) {
   body body::before {
     content: "'lg': lig el. over 992px.";
+  }
+  #hero-text {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
   }
 
   /* END "lg-" 992px and up */

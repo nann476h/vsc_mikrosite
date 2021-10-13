@@ -20,6 +20,7 @@ sections.forEach((section) => {
       duration: 1,
       opacity: 0,
     })
+
     .from(p, {
       y: 100,
       duration: 1,
