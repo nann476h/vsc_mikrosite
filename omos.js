@@ -10,7 +10,7 @@ sections.forEach((section) => {
       scrollTrigger: {
         trigger: section,
         start: "top 50%",
-        end: "+=200",
+        end: "+= 200",
         scrub: true,
         markers: true,
       },
