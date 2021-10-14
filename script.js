@@ -12,8 +12,7 @@ sections.forEach((section) => {
         trigger: section,
         start: "top 50%",
         end: "+=200",
-        scrub: true,
-        markers: true,
+        scrub: 1.5,
       },
     })
     .from(h2, {
@@ -24,9 +23,48 @@ sections.forEach((section) => {
       y: 100,
       duration: 1,
       opacity: 0,
-      stagger: 1,
+      stagger: 0.3,
     });
 });
+
+gsap.from(".card", {
+  y: 100,
+  opacity: 0,
+  stagger: 0.3,
+
+  scrollTrigger: {
+    trigger: "#services",
+    start: "top 50%",
+    end: "+=200",
+    scrub: 1,
+    markers: true,
+  },
+});
+
+// gsap
+//   .timeline({
+//     scrollTrigger: {
+//       trigger: "#follow",
+//       start: "top 50%",
+//       end: "+=200",
+//       scrub: 1,
+//     },
+//   })
+//   .from(left, {
+//     xProcent: -100,
+
+//     duration: 1,
+//     opacity: 0,
+//   })
+//   .from(
+//     right,
+//     {
+//       xProcent: 100,
+//       duration: 1,
+//       opacity: 0,
+//     },
+//     0
+//   );
 
 //const sections = gsap.utils.toArray('section');
 const colorSections = [...document.querySelectorAll("[data-color]")];
@@ -43,34 +81,3 @@ colorSections.forEach((section, i) => {
     onEnterBack: () => gsap.to("body", { background: color }),
   });
 });
-
-// Background color change end.
-
-// slider
-var index = 0;
-var slides = document.querySelectorAll(".slides");
-var dot = document.querySelectorAll(".dot");
-
-function changeSlide() {
-  if (index < 0) {
-    index = slides.length - 1;
-  }
-
-  if (index > slides.length - 1) {
-    index = 0;
-  }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    dot[i].classList.remove("active");
-  }
-
-  slides[index].style.display = "block";
-  dot[index].classList.add("active");
-
-  index++;
-
-  setTimeout(changeSlide, 2000);
-}
-
-changeSlide();
