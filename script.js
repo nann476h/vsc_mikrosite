@@ -37,36 +37,9 @@ gsap.from(".card", {
     start: "top 50%",
     end: "+=200",
     scrub: 1,
-    markers: true,
   },
 });
 
-// gsap
-//   .timeline({
-//     scrollTrigger: {
-//       trigger: "#follow",
-//       start: "top 50%",
-//       end: "+=200",
-//       scrub: 1,
-//     },
-//   })
-//   .from(left, {
-//     xProcent: -100,
-
-//     duration: 1,
-//     opacity: 0,
-//   })
-//   .from(
-//     right,
-//     {
-//       xProcent: 100,
-//       duration: 1,
-//       opacity: 0,
-//     },
-//     0
-//   );
-
-//const sections = gsap.utils.toArray('section');
 const colorSections = [...document.querySelectorAll("[data-color]")];
 
 colorSections.forEach((section, i) => {
@@ -76,7 +49,6 @@ colorSections.forEach((section, i) => {
     trigger: section,
     start: "top center",
     end: "bottom center",
-    markers: true,
     onEnter: () => gsap.to("body", { background: color }),
     onEnterBack: () => gsap.to("body", { background: color }),
   });
